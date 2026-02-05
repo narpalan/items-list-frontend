@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item } from '../types/item';
+import type { Item } from '../types/item';
 
 interface ItemListProps {
   items: Item[];

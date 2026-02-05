@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Item, ItemFormData } from '../types/item';
+import type { Item, ItemFormData } from '../types/item';
 
 const api = axios.create({
     baseURL: 'http://localhost:5000',
