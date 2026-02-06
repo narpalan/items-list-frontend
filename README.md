@@ -1,69 +1,75 @@
-# React + TypeScript + Vite
+# ⚛️ Frontend - Sistema de Gerenciamento de Itens
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Descrição
 
-Currently, two official plugins are available:
+Interface web moderna desenvolvida para consumo da API de gerenciamento de itens, incluindo:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dashboard intuitivo**: Visualizacao clara de todos os itens cadastrados em formato de tabela.
+- **Formulario dinamico**: Criacao e edicao de itens com validacao em tempo real.
+- **Feedback visual**: Sistema de alertas para erros e confirmacoes.
+- **Estatisticas em tempo real**: Contadores automaticos de total de itens e quantidade.
+- **Estados de loading**: Indicadores visuais durante operacoes assincronas.
+- **Confirmacao de exclusao**: Dialogo de seguranca antes de remover itens.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- [React](https://react.dev) (v. 19) com hooks e StrictMode.
+- [TypeScript](https://www.typescriptlang.org) para tipagem estatica completa.
+- [Vite](https://vitejs.dev) (v. 7) para build ultrarrapido com SWC.
+- [Axios](https://axios-http.com) para requisicoes HTTP a API.
+- [ESLint](https://eslint.org) com plugins React para qualidade de codigo.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Como Usar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Siga os passos abaixo para instalar e rodar o projeto localmente:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+0. Caso nao tenha, instale o [Node.js](https://nodejs.org) em uma versao >=18.x
+
+1. Certifique-se de que o backend esteja rodando em http://localhost:5000
+
+2. Clone ou navegue ate a pasta do frontend:
+   cd frontend
+
+3. Instale as dependencias:
+   npm install
+
+4. Execute o projeto:
+   npm run dev
+
+5. Acesse a aplicacao no navegador:
+   http://localhost:5173
+
+
+> Certifique-se de que a porta 5173 esteja disponivel e o backend esteja acessivel.
+
+## 📋 Funcionalidades
+
+- Listagem completa de itens com indicadores visuais para quantidade zero.
+- Cadastro de novos itens com validacao de campos obrigatorios.
+- Edicao inline com preenchimento automatico dos dados existentes.
+- Exclusao com confirmacao de seguranca via modal nativo.
+- Estatisticas dinamicas que atualizam automaticamente apos operacoes.
+- Tratamento de erros com mensagens claras e botao de fechar alerta.
+- Responsividade basica para diferentes tamanhos de tela.
+
+## 🎯 Motivacao
+
+O projeto foi criado para demonstrar uma integracao completa entre frontend moderno e API REST, utilizando as ultimas versoes do React com Vite. A escolha de ferramentas leves e performaticas visa proporcionar uma experiencia de desenvolvimento agil e uma aplicacao final rapida para o usuario.
+
+## 📈 Futuras Funcionalidades
+
+- **Paginacao na listagem** para melhor performance com grandes volumes de dados.
+- **Filtros e busca** por nome ou faixa de quantidade.
+- **Ordenacao de colunas** na tabela (clicar no header para ordenar).
+- **Modo escuro/claro** toggle de tema.
+- **Testes E2E** com Playwright ou Cypress.
+- **React Query/TanStack Query** para cache inteligente de requisicoes e gerenciamento de estado servidor, reduzindo chamadas desnecessarias a API e melhorando a experiencia offline.
+- **Zod para validacao de schemas**: Implementar validacao de tipos e schemas no frontend com Zod, garantindo type safety entre frontend e backend e previnindo erros de dados antes do envio a API.
+
+## 📜 Licenca
+
+Licenca a definir.
